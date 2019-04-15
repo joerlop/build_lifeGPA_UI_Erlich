@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 html, body {
   margin: 0; 
   padding: 0;
@@ -13,10 +17,86 @@ html, body {
 
 body {
   .flex(none, center, column);
-  background-color: @lambda-times-color-background;
-  color: @lambda-times-color-primary;
+  background-color: @backgroundColor;
+  color: @primaryColor;
   font-family: 'PT Sans', sans-serif;
+
+  .navigation {
+    height: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      height: 50px;
+    }
+
+    nav {
+      width: 50%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 1.8rem;
+
+      a {
+        margin-right: 10%;
+      }
+
+      button {
+        margin-left: 15%;
+        border-radius: 6px;
+        border: 2px solid black;
+        background: @backgroundColor;
+        padding: 0 30px;
+        font-size: 1.6rem;
+        height: 32px;
+      }
+    }
+  } //navigation  
+
+  header {
+    height: 85vh;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    .header-right-content {
+      width: 55%;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
+
+    .header-left-content {
+      width: 35%;
+      margin-left: 5%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      h1 {
+        font-size: 6.5rem;
+        font-weight: bold;
+      }
+
+      h2 {
+        padding-top: 15px;
+        font-size: 2rem;
+      }
+    }
+  }
 }
+
+@import './components/Navigation/Navigation';
+@import './components/Header/Header';
+
 
 // Ojo: importar los componentes aca.
 // @import './components/TopBar/TopBar';
